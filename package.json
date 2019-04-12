@@ -1,7 +1,7 @@
 {
-  "name": "@iftt/skeleton-module",
+  "name": "@iftt/garage-client",
   "version": "1.0.0",
-  "description": "When creating new NodeJS modules, use this skeletal structure",
+  "description": "This is IoT code that listens/posts to the tangle and opens or closes the garage.",
   "main": "lib/index.js",
   "scripts": {
     "lint+build+test": "yarn run lint && yarn run build && yarn run test",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iftt/skeleton-module.git"
+    "url": "https://github.com/iftt/garage-client.git"
   },
   "author": "Craig OConnor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IFTT/skeleton-module/issues"
+    "url": "https://github.com/IFTT/garage-client/issues"
   },
-  "homepage": "https://github.com/IFTT/skeleton-module#readme",
+  "homepage": "https://github.com/IFTT/garage-client#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -28,7 +28,18 @@
     "@babel/preset-flow": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^4.0.0",
-    "flow-bin": "^0.48.0",
+    "flow-bin": "^0.96.0",
     "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "@iftt/mam": "^0.6.2",
+    "@iftt/program-generator": "^1.0.0",
+    "@iftt/tryte-buffer": "^1.1.2",
+    "axios": "^0.18.0",
+    "dotenv": "^7.0.0",
+    "nedb": "^1.8.0",
+    "onoff": "^4.1.1",
+    "serialport": "^7.1.4",
+    "socket.io": "^2.2.0"
   }
 }
