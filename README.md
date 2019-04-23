@@ -10,6 +10,11 @@
 ## About
 
 
+## Debug
+If you need to debug this module use the string `garage-client` & `service-manager` (to be modularized)
+```sh
+DEBUG=garage-client,service-manager node x
+```
 
 ## Useful commands
 

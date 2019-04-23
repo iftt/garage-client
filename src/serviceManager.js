@@ -2,6 +2,8 @@
 import axios from 'axios'
 import ProgramGenerator from '@iftt/program-generator'
 
+const debug = require('debug')('service-manager')
+
 type Service = {
   protocol: { string: { string: any } },
   getRoot: string
@@ -25,6 +27,7 @@ class ServiceManager {
   updateIp: Function
   addService: Function
   constructor (instructions: [Instructions], action: Function) {
+    debug('creating ServiceManager')
     const self = this
     self.runningServices = 0
     self.action = action
@@ -35,11 +38,13 @@ class ServiceManager {
   }
 
   deconstruct () {
+    debug('deconstruct')
     this.clearServices()
     clearInterval(this.updateIp)
   }
 
   updateLocation () {
+    debug('updateLocation')
     // send a ping every 5 min so that the server knows the device's ip
     axios
       .post(`http://${(process.env.SERVER) ? process.env.SERVER : 'localhost'}/login`)
@@ -60,14 +65,17 @@ class ServiceManager {
   }
 
   getServiceCount () {
+    debug('getServiceCount')
     return this.runningServices
   }
 
   clearServices () {
+    debug('clearServices')
     for (let serviceId in this.services) { this.removeServiceById(serviceId) }
   }
 
   removeServiceById (serviceId: string) {
+    debug('removeServiceById')
     this.services[serviceId].deconstruct()
     this.services[serviceId].removeListener('action', this.action)
     delete this.services[serviceId]
@@ -75,6 +83,7 @@ class ServiceManager {
   }
 
   addService (instruction: Instructions) {
+    debug('addService')
     this.services[instruction.serviceId] = new ProgramGenerator(instruction)
     this.services[instruction.serviceId].on('action', this.action)
     this.runningServices++

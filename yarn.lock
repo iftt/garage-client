@@ -743,10 +743,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@iftt/icc-fpga-protocol@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@iftt/icc-fpga-protocol/-/icc-fpga-protocol-1.0.1.tgz#a5dae3f093124f076493e8fc675e58e0f188e2d8"
-  integrity sha512-rpSEXpmQ7Ll7Vi5GHRqW3VqWxkRHTDpXdj0DxL8s3lc9Pxu2+uJawL0TjOhZfwLKK8T3kJ+qSDS4wr9sBg0b8g==
+"@iftt/icc-fpga-protocol@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iftt/icc-fpga-protocol/-/icc-fpga-protocol-1.1.0.tgz#ffbbe7b99f1b10d363569d88a9a20469dd044b66"
+  integrity sha512-9sBqAMn0Gy9b4UyeCjDUYSU5LahBL+VO5n2/l0sXUnj0lwSZoj/olvj1P6bPpHYMogEoXo144OjJUyBFZj4m2w==
   dependencies:
     serialport "^7.1.4"
 
@@ -760,27 +760,27 @@
     "@iota/curl" "^1.0.0-beta.11"
     babel-polyfill "^6.26.0"
 
-"@iftt/program-generator@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@iftt/program-generator/-/program-generator-1.0.0.tgz#1337c26de1f7527ed86718c8bf713ebd266796f4"
-  integrity sha512-Jt3Wy1F7QqOc0nzkr50PUn+pjCn8VhnYOpt8OwcjDW7AOjUisGL78nxoKHAuw5C1od5EwmCc7UuFmqeqk/xP1g==
+"@iftt/program-generator@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@iftt/program-generator/-/program-generator-1.1.0.tgz#ec0596212b4165cce70c85500a86640ca183f657"
+  integrity sha512-W+WVgEE+UF+woJLhX5+x5itwYvE+3uqHAcchwuLUU2lbPLvpQDY/RFYDYsO3pZ+s2o9adLOiM/ex9Kv4ki4cjA==
   dependencies:
     "@iftt/mam" "^0.6.2"
-    "@iftt/tryte-buffer" "^1.1.2"
+    "@iftt/tryte-buffer" "^1.2.0"
     axios "^0.18.0"
     json-logic-js "^1.2.2"
 
-"@iftt/tryte-buffer@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@iftt/tryte-buffer/-/tryte-buffer-1.1.2.tgz#8043ece19ea7ce721623f4dfb2041ce6d121ac58"
-  integrity sha512-sViWHxpqyIAK6fqykaqM1vUb0wXS8NjVJu54MBBWaA/wyaCQCGNdGLkfQ9mCw582+VmSYebyyr4a7WmXDpRAiw==
+"@iftt/tryte-buffer@^1.2.0", "@iftt/tryte-buffer@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@iftt/tryte-buffer/-/tryte-buffer-1.3.0.tgz#d24db647e4b4327bed9f4321d0cd2582454ab2ef"
+  integrity sha512-lhVDxQo/MBEDYqdYq+FenGhHdhY5eYxxfbaAQ5FLE4cjbioOMo/rtaDa/gA4HJ0hiQNIx1pcFH/Kbmnkkciefw==
   dependencies:
-    "@iftt/tryte-encode-decode" "^1.5.1"
+    "@iftt/tryte-encode-decode" "^1.7.0"
 
-"@iftt/tryte-encode-decode@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@iftt/tryte-encode-decode/-/tryte-encode-decode-1.5.1.tgz#113c981b62371a74f5c2f76271c6974c1ba1037d"
-  integrity sha512-mGL1TVLxRQLtxZ6+PauPcFhpPi2E37ZlwFBo2rU84SRGu5LT1Q6ESNyFJ0ZGtiKLGKptkCwLNbRakfLiA/uMRw==
+"@iftt/tryte-encode-decode@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@iftt/tryte-encode-decode/-/tryte-encode-decode-1.7.0.tgz#996992e2ba89da8cc964d0b98470f13e5abd2156"
+  integrity sha512-XZikWiITc4N+5qDU47Gpy//ZvmlQJV+WDlhvzkM9giNv+Rj+juArKz5DIuMEHh7Px+AvG+VzGXaB5HSGVVYfDg==
   dependencies:
     "@iota/area-codes" "^0.1.0"
 

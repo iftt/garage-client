@@ -11,6 +11,8 @@ import ServiceManager from './serviceManager'
 
 import type { Instructions } from './serviceManager'
 
+const debug = require('debug')('garage-client')
+
 require('dotenv').config() // .env variables
 
 type Options = {
@@ -34,6 +36,7 @@ class GarageClient extends FpgaProtocol {
   _onPortOpen: Function
   constructor (options: Options) {
     super(options.fpgaPort)
+    debug('creating GarageClient')
     // server
     let origins = (options.allowedOrigins) ? options.allowedOrigins : (process.env.ORIGINS) ? process.env.ORIGINS : ['*']
     if (typeof origins === 'string') { origins = origins.split(',') }
@@ -60,10 +63,12 @@ class GarageClient extends FpgaProtocol {
   }
 
   deconstruct () {
+    debug('deconstruct')
     this.socket.close()
   }
 
   _actions (action: { key: string, value: any }) {
+    debug('_actions')
     // this device only has "date" and "garageDoor", thus we only have to worry about "garageDoor"
     let changeGarageState = false
     if (action.key === 'garageDoor') {
@@ -77,6 +82,7 @@ class GarageClient extends FpgaProtocol {
   }
 
   program (instructions: [Instructions]) {
+    debug('program')
     const self = this
     self.serviceManager.clearServices()
     if (Array.isArray(instructions)) {
@@ -86,6 +92,7 @@ class GarageClient extends FpgaProtocol {
   }
 
   setupIO () {
+    debug('setupIO')
     const self = this
     self.socket.on('connection', (socket) => {
       socket.emit('ready', { id: socket.id, clientId: process.env.DEVICE_ID })
@@ -94,6 +101,7 @@ class GarageClient extends FpgaProtocol {
   }
 
   setupMaM () {
+    debug('setupMaM')
     const self = this
     if (this.provider === 'https://nodes.devnet.iota.org') {
       self.minWeightMagnitude = 9 // testnet difficulty
@@ -114,11 +122,12 @@ class GarageClient extends FpgaProtocol {
   }
 
   _onPortOpen () { // called when fpga device is ready...
-    console.log('fpga device is ready')
+    debug('_onPortOpen')
     this._watchGarageDoor()
   }
 
   openCloseGarage () {
+    debug('openCloseGarage')
     const self = this
     self.garageOpenerCloser.writeSync(1)
     setTimeout(() => {
@@ -127,10 +136,12 @@ class GarageClient extends FpgaProtocol {
   }
 
   getRoot () {
+    debug('getRoot')
     return this.mamState.channel.next_root
   }
 
   _watchGarageDoor () {
+    debug('_watchGarageDoor')
     const self = this
     self.reedSwitch.watch((err: null | string, status: number) => {
       if (err) { console.log(err) } else if (status !== self.switchStatus) { // watch randomly returns values outside of true changes, and thus can be the same value
@@ -141,16 +152,19 @@ class GarageClient extends FpgaProtocol {
   }
 
   onGarageOpen () {
+    debug('onGarageOpen')
     const self = this
     self.jobQueue.push(function () { self._publish(false, new Date()) })
   }
 
   onGarageClose () {
+    debug('onGarageClose')
     const self = this
     self.jobQueue.push(function () { self._publish(true, new Date()) })
   }
 
   async _publish (garageDoor: boolean, date: Date) {
+    debug('_publish')
     const self = this
     try {
       const trytes = self.garageProtocol.encode({
