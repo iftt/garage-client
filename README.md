@@ -15,6 +15,9 @@
 
 ### Create a Tangle Seed
 ```sh
+# Linux
+cat /dev/urandom |tr -dc A-Z9|head -c${1:-81}
+# OS X
 cat /dev/urandom |LC_ALL=C tr -dc 'A-Z9' | fold -w 81 | head -n 1
 ```
 

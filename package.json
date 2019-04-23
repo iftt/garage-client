@@ -37,6 +37,7 @@
     "yarn-upgrade-all": "^0.5.0"
   },
   "dependencies": {
+    "@iftt/icc-fpga-protocol": "^1.0.1",
     "@iftt/mam": "^0.6.2",
     "@iftt/program-generator": "^1.0.0",
     "@iftt/tryte-buffer": "^1.1.2",

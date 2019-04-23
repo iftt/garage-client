@@ -5,7 +5,7 @@ import Queue from 'queue'
 import { Gpio } from 'onoff' // https://www.npmjs.com/package/onoff#writesyncvalue & https://pinout.xyz/pinout/pin13_gpio27
 import * as Mam from '@iftt/mam' // https://devnet.thetangle.org/mam/
 import TryteBuffer from '@iftt/tryte-buffer'
-import FpgaProtocol from './fpgaProtocol'
+import FpgaProtocol from '@iftt/icc-fpga-protocol'
 import garageProtocol from './garageProtocol.json'
 import ServiceManager from './serviceManager'
 

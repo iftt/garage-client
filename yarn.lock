@@ -743,6 +743,13 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@iftt/icc-fpga-protocol@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@iftt/icc-fpga-protocol/-/icc-fpga-protocol-1.0.1.tgz#a5dae3f093124f076493e8fc675e58e0f188e2d8"
+  integrity sha512-rpSEXpmQ7Ll7Vi5GHRqW3VqWxkRHTDpXdj0DxL8s3lc9Pxu2+uJawL0TjOhZfwLKK8T3kJ+qSDS4wr9sBg0b8g==
+  dependencies:
+    serialport "^7.1.4"
+
 "@iftt/mam@^0.6.2":
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/@iftt/mam/-/mam-0.6.2.tgz#4dfaf06718ab6446cce9f0e4d2972524afd256ef"
