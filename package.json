@@ -1,12 +1,12 @@
 {
   "name": "@iftt/garage-client",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "This is IoT code that listens/posts to the tangle and opens or closes the garage.",
   "main": "lib/index.js",
   "scripts": {
     "lint+build+test": "yarn run lint && yarn run build && yarn run test",
     "lint": "echo linting... && standard ./src/**/*.js && echo 'successfully linted'",
-    "build": "echo building... && babel src/ -d lib/ && echo 'successfully built'",
+    "build": "echo building... && babel src/ -d lib/ --source-maps inline --copy-files && echo 'successfully built'",
     "prepublish": "yarn run build",
     "test": "echo running server tests... && standard && tape test/**/*.js | tap-summary && echo 'successfully completed tests'"
   },

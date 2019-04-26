@@ -1,6 +1,6 @@
 const GarageClient = require('./lib/index.js').default
 
-GarageClient({
+new GarageClient({
   tangleLocation: 'https://nodes.devnet.iota.org',
   fpgaPort: '/dev/ttyUSB1'
 })
