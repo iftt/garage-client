@@ -38,7 +38,7 @@ class GarageClient extends FpgaProtocol {
     super(options.fpgaPort)
     debug('creating GarageClient')
     // server
-    let origins = (options.allowedOrigins) ? options.allowedOrigins : (process.env.ORIGINS) ? process.env.ORIGINS : ['*']
+    let origins = (options.allowedOrigins) ? options.allowedOrigins : (process.env.ORIGINS) ? process.env.ORIGINS : ['*:*']
     if (typeof origins === 'string') { origins = origins.split(',') }
     this.socket = new SocketIO(8001, { origins })
     this.setupIO()
@@ -55,6 +55,8 @@ class GarageClient extends FpgaProtocol {
       if (!err && doc) {
         let instructions: [Instructions] = doc.services
         this.serviceManager = new ServiceManager(instructions, this._actions.bind(this))
+      } else {
+        this.serviceManager = new ServiceManager(null, this._actions.bind(this))
       }
     })
     this.garageProtocol = new TryteBuffer(garageProtocol)

@@ -1,6 +1,6 @@
 {
   "name": "@iftt/garage-client",
-  "version": "1.7.2",
+  "version": "1.7.4",
   "description": "This is IoT code that listens/posts to the tangle and opens or closes the garage.",
   "main": "lib/index.js",
   "scripts": {

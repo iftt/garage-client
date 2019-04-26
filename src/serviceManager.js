@@ -26,7 +26,7 @@ class ServiceManager {
   runningServices: number
   updateIp: Function
   addService: Function
-  constructor (instructions: [Instructions], action: Function) {
+  constructor (instructions?: null | [Instructions], action: Function) {
     debug('creating ServiceManager')
     const self = this
     self.runningServices = 0
