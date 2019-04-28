@@ -11,7 +11,7 @@
 
 This is an example implementation of services and devices on the IOTA network using a weather station, FPGA, and a garage door opener. The IOTA network is still a young protocol with a lot of room for interpretation on how to best utilize it. While there have been attempts to market data for financial gain, I believe the more practical application lies in the sale of IoT devices with an ASIC POW chip to talk on the IOTA network effortlessly.
 
-This demo client is essentially a tool to listen to the iota network and make decisions (ope/close the garage door) based upon specified instruction sets and inputs that you can find in `test/weatherProgram.json`
+This demo client is essentially a tool to listen to the iota network and make decisions (open/close the garage door) based upon specified instruction sets and inputs that you can find in `test/weatherProgram.json`
 
 ## Install
 ```sh
@@ -36,10 +36,8 @@ GARAGE_OPEN_STATE=1
 
 #### How to generate a unique device id secret
 ```sh
-# Linux
-cat /dev/urandom |tr -dc a-zA-Z0-9|head -c${1:-32}
-# OS X
-cat /dev/urandom |LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1
+# Linux & OS X
+uuidgen
 ```
 
 #### How to generate a unique IOTA seed
