@@ -122,7 +122,7 @@ These are some of the main modules that make up the IFTT project:
 ## Debug
 If you need to debug this module use the string `garage-client` & `service-manager` (to be modularized)
 ```sh
-DEBUG=garage-client,service-manager node x
+DEBUG=garage-client,service-manager,icc-fpga-protocol,tryte-buffer,tryte-encode-decode node x
 # or all
 DEBUG=* node x
 ```
